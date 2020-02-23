@@ -1,7 +1,9 @@
+from collections import defaultdict
+
+import validators
 from flask import request
 from flask_restplus import Api, Resource, fields
 from werkzeug.utils import redirect
-import validators
 
 from app import create_app, cache, LOGGER
 from commons.utils import shortname_generator, get_reserved_short_names
@@ -38,8 +40,17 @@ class ShortName():
         return check_short_name
 
 
-@api.route('/create_shortner')
+@api.route('/shortner')
 class URLShortner(Resource, ShortName):
+
+    @api.response(200, 'Successfully retrieves all urls')
+    def get(self):
+        res = {
+            'success': True,
+            'message': 'url does not exist',
+            'data': url_shortner_schema_multi.dump(UrlShortnerMapping.query.all()),
+        }
+        return res, 200
 
     @api.response(200, 'Successfully shortened the url')
     @api.expect(urlshortner_post, validate=True)
@@ -92,6 +103,27 @@ class URLShortner(Resource, ShortName):
         return res, 200
 
 
+@api.route('/time_series_plot')
+class TimeSeriesPlot(Resource):
+
+    @api.response(200, 'Successfully retrieves all urls')
+    def get(self):
+        time_series_dict = defaultdict(int)
+        for url_shortner in UrlShortnerMapping.query.all():
+            dt = url_shortner.created_at.strftime("%Y-%m-%d")
+            time_series_dict[dt] += 1
+        time_series_data = []
+        for date, count in time_series_dict.items():
+            time_series_data.append({'date': date, 'count': count})
+
+        res = {
+            'success': True,
+            'message': 'Time series data successfully retrieved',
+            'data': time_series_data
+        }
+        return res, 200
+
+
 @main_app.route('/<string:short_name>')
 @cache.cached(timeout=0)
 def redirector(short_name):
@@ -102,7 +134,7 @@ def redirector(short_name):
         res = {
             'success': False,
             'message': 'url does not exist',
-            'data': url_shortner_schema_multi.dump(UrlShortnerMapping.query.all()),
+            'data': {},
         }
         return res, 200
     redirect_url = url_shortner.url
