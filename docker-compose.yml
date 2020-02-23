@@ -1,0 +1,27 @@
+version: "3"
+services:
+  redis:
+    image: 'bitnami/redis:5.0-ol-7'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "6379:6379"
+  backend_apis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    command: gunicorn -b :8000 wsgi:main_app
+    env_file:
+      - ./.env
+    volumes:
+      - "./app.db:/app/app.db"
+    depends_on:
+      - redis
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - backend_apis

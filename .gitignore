@@ -1,0 +1,6 @@
+.idea/
+*.pyc
+*.log
+*.cache
+__pycache__/
+.env
