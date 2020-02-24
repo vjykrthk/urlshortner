@@ -5,9 +5,9 @@ http://app.vijaykarthikurlshortner.co.vu/documentation
 
 ### Enpoints
 
-**GET**  http://app.vijaykarthikurlshortner.co.vu/shortner
-**Description**: List of shortned urls
-**Sample response**
+**GET**  http://app.vijaykarthikurlshortner.co.vu/shortner  
+**Description**: List of shortned urls  
+**Sample response**  
 ```
 {
   "success": true,
@@ -22,9 +22,9 @@ http://app.vijaykarthikurlshortner.co.vu/documentation
   ]
 }
 ```
-**POST** http://app.vijaykarthikurlshortner.co.vu/shortner
-**Description**: Creates shortned url
-**Sample Post Data**:
+**POST** http://app.vijaykarthikurlshortner.co.vu/shortner  
+**Description**: Creates shortned url  
+**Sample Post Data**:  
 ```
 {
   "url": "https://docs.google.com/a/yellowmessenger.com/document/d/12TxT2LjnWHYAuHGq5yQBxj3IVUehW-XfHgwEbR8W5nw/edit?usp=drive_web",
@@ -46,9 +46,9 @@ If shortname already exists the endpoint will return 400 with message the messag
   }
 }
 ```
-**GET** http://app.vijaykarthikurlshortner.co.vu/time_series_plot
-**Description**: Returns shortned urls time series data
-**Sample response**
+**GET** http://app.vijaykarthikurlshortner.co.vu/time_series_plot  
+**Description**: Returns shortned urls time series data  
+**Sample response**  
 ```
 {
   "success":true,  
@@ -70,6 +70,6 @@ If shortname already exists the endpoint will return 400 with message the messag
 }
 ```
 
-## > Architecture Diagram
+## Architecture Diagram
 
 ![enter image description here](https://photos.app.goo.gl/o2CNLjxcRH7se1NS9)
