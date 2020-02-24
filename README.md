@@ -72,4 +72,4 @@ If shortname already exists the endpoint will return 400 with message the messag
 
 ## Architecture Diagram
 
-![enter image description here](https://photos.app.goo.gl/o2CNLjxcRH7se1NS9)
+![](URLShortner.jpg)
