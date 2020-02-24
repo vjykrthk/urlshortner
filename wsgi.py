@@ -86,7 +86,7 @@ class URLShortner(Resource, ShortName):
         if check_short_name:
             res = {
                 'success': False,
-                'message': 'Shortname already exists choose a different name',
+                'message': 'Shortname already exists or is not a valid name choose a different name',
                 'data': {},
             }
             return res, 400
