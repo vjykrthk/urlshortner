@@ -1,9 +1,11 @@
 ### UrlShortner
 
+The application is deployed on amazon ec2 instance.  
+
 #### Documentation
 http://app.vijaykarthikurlshortner.co.vu/documentation
 
-### Enpoints
+### Endpoints
 
 **GET**  http://app.vijaykarthikurlshortner.co.vu/shortner  
 **Description**: List of shortned urls  
@@ -31,10 +33,10 @@ http://app.vijaykarthikurlshortner.co.vu/documentation
   "short_name": "yellow-messenger"
 }
 ```
-url - Long url that needs to be shortned. This is a required parameter
-short_name - Shortname that needs to be given to the long url. This is optional
+**url** - Long url that needs to be shortned. This is a required parameter  
+**short_name(Optional)** - Shortname that needs to be given to the long url. This is optional  
 
-If shortname already exists the endpoint will return 400 with message the message shortname already exists choose a different shortname
+If shortname already exists the endpoint will return 400 with message the message shortname already exists choose a different shortname  
 
 **Sample response**
 ```
@@ -72,4 +74,4 @@ If shortname already exists the endpoint will return 400 with message the messag
 
 ## Architecture Diagram
 
-![enter image description here](https://photos.app.goo.gl/o2CNLjxcRH7se1NS9)
+![](URLShortner.jpg)
