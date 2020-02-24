@@ -76,7 +76,7 @@ class URLShortner(Resource, ShortName):
             res = {
                 'success': False,
                 'message': 'Shortned url already exists for the url',
-                'data': url_shortner.url,
+                'data': {'shortned_url': f'{Config.DOMAIN_URL}/{url_shortner.short_name}'},
             }
             return res, 200
 
