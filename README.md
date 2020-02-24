@@ -3,7 +3,7 @@
 #### Documentation
 http://app.vijaykarthikurlshortner.co.vu/documentation
 
-### Enpoints
+### Endpoints
 
 **GET**  http://app.vijaykarthikurlshortner.co.vu/shortner  
 **Description**: List of shortned urls  
