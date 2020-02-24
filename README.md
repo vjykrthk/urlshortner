@@ -24,6 +24,8 @@ http://app.vijaykarthikurlshortner.co.vu/documentation
   ]
 }
 ```
+
+
 **POST** http://app.vijaykarthikurlshortner.co.vu/shortner  
 **Description**: Creates shortned url  
 **Sample Post Data**:  
@@ -48,6 +50,8 @@ If shortname already exists the endpoint will return 400 with message the messag
   }
 }
 ```
+
+
 **GET** http://app.vijaykarthikurlshortner.co.vu/time_series_plot  
 **Description**: Returns shortned urls time series data  
 **Sample response**  
