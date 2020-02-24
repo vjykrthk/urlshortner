@@ -7,6 +7,8 @@ http://app.vijaykarthikurlshortner.co.vu/documentation
 
 ### Endpoints
 
+######################################################################################
+
 **GET**  http://app.vijaykarthikurlshortner.co.vu/shortner  
 **Description**: List of shortned urls  
 **Sample response**  
@@ -24,7 +26,7 @@ http://app.vijaykarthikurlshortner.co.vu/documentation
   ]
 }
 ```
-
+######################################################################################
 
 **POST** http://app.vijaykarthikurlshortner.co.vu/shortner  
 **Description**: Creates shortned url  
@@ -50,7 +52,7 @@ If shortname already exists the endpoint will return 400 with message the messag
   }
 }
 ```
-
+######################################################################################
 
 **GET** http://app.vijaykarthikurlshortner.co.vu/time_series_plot  
 **Description**: Returns shortned urls time series data  
@@ -75,6 +77,7 @@ If shortname already exists the endpoint will return 400 with message the messag
   ]
 }
 ```
+######################################################################################
 
 ## Architecture Diagram
 
