@@ -1,5 +1,7 @@
 ### UrlShortner
 
+The application is deployed on amazon ec2 instance.  
+
 #### Documentation
 http://app.vijaykarthikurlshortner.co.vu/documentation
 
