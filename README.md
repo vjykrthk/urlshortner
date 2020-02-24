@@ -31,8 +31,8 @@ http://app.vijaykarthikurlshortner.co.vu/documentation
   "short_name": "yellow-messenger"
 }
 ```
-url - Long url that needs to be shortned. This is a required parameter  
-short_name(Optional) - Shortname that needs to be given to the long url. This is optional  
+**url** - Long url that needs to be shortned. This is a required parameter  
+**short_name(Optional)** - Shortname that needs to be given to the long url. This is optional  
 
 If shortname already exists the endpoint will return 400 with message the message shortname already exists choose a different shortname  
 
