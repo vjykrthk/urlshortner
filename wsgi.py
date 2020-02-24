@@ -36,7 +36,8 @@ class ShortName():
     def check_short_name(self, short_name):
         reserved_names = get_reserved_short_names()
         check_short_name = short_name and short_name in reserved_names \
-                           or short_name and self.get_url_shortner(short_name=short_name)
+                           or short_name and self.get_url_shortner(short_name=short_name)\
+                           or short_name and not validators.slug(short_name)
         return check_short_name
 
 
@@ -45,6 +46,8 @@ class URLShortner(Resource, ShortName):
 
     @api.response(200, 'Successfully retrieves all urls')
     def get(self):
+        '''List all shorterned urls'''
+
         res = {
             'success': True,
             'message': 'url does not exist',
@@ -136,7 +139,7 @@ def redirector(short_name):
             'message': 'url does not exist',
             'data': {},
         }
-        return res, 200
+        return res, 404
     redirect_url = url_shortner.url
     if 'http' not in redirect_url or 'https' not in redirect_url:
         redirect_url = f'http://{redirect_url}'
